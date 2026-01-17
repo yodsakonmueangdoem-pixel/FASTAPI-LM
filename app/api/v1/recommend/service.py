@@ -5,14 +5,12 @@ import numpy as np
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
 from sklearn.metrics.pairwise import cosine_similarity
-import os
-import logging
+from loguru import logger
 import warnings
 
 # Suppress scikit-learn version warning for model loading
 warnings.filterwarnings('ignore', category=UserWarning)
 
-logger = logging.getLogger(__name__)
 
 
 # Get the directory where this script is located

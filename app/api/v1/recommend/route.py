@@ -1,4 +1,4 @@
-import re
+
 from fastapi import APIRouter
 from .schema import RecommendRequest
 from .service import search_predict

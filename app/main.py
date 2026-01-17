@@ -1,12 +1,9 @@
 import logging
 from fastapi import FastAPI
 from .api.v1.router import app_router
+from .core import logger
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-)
+# Configure logging is handled by core.logger module
 
 app = FastAPI(
     title="AI Prediction Service",
