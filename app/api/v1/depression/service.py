@@ -11,6 +11,11 @@ MODEL_PATH = (
     Path(__file__).parent.parent.parent.parent / "models" / "depression_model.joblib"
 )
 
+# Load model once at module level
+artifact = joblib.load(MODEL_PATH)
+model_features = artifact["features"]
+model = artifact["model"]
+
 
 def to_df(req: DepressionRequest, features) -> pd.DataFrame:
     row = {
@@ -32,11 +37,7 @@ def to_df(req: DepressionRequest, features) -> pd.DataFrame:
 
 
 def predict_depression(request: DepressionRequest) -> DepressionResponse:
-    logger.info(f"Load model successfully from {MODEL_PATH}")
-    artifact = joblib.load(MODEL_PATH)
-    
-    X = to_df(request,artifact["features"])
-    model = artifact["model"]
+    X = to_df(request, model_features)
 
     prob = float(model.predict_proba(X)[0][1])
     pred = int(model.predict(X)[0])
