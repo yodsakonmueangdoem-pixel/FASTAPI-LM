@@ -38,6 +38,8 @@ def predict_depression(request: DepressionRequest) -> DepressionResponse:
     prob = float(model.predict_proba(X)[0][1])
     pred = int(model.predict(X)[0])
 
+    model = joblib.load(MODEL_PATH)
+
     return DepressionResponse(
         prediction="Yes" if pred == 1 else "No",
         probability_depression=prob,
