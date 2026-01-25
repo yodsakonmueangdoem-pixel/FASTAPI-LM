@@ -38,7 +38,7 @@ A FastAPI project with machine learning capabilities for serving ML models via R
 Start the development server with auto-reload:
 
 ```bash
-uvicorn main:app --reload
+uvicorn app.main:app --reload
 ```
 
 ### Production Mode
