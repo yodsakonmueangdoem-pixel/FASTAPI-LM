@@ -1,6 +1,0 @@
-services:
-  api-yodsakon:
-    build: .
-    ports:
-      - "8547:8000"
-    restart: always

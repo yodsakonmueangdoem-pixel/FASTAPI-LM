@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  ai-companion-yodsakon:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ai-companion-basil
+    ports:
+      - "3547:80"
+    environment:
+      - VITE_API_URL=http://fastapi-backend:8000
+    networks:
+      - netsiwapan02
+    restart: unless-stopped
+    depends_on:
+      - fastapi-backend
+
+  # FastAPI backend service (assumed to be running in the same network)
+  fastapi-backend:
+    image: fastapi-lm-api-siwapan-02:latest  # Replace with your actual FastAPI image
+    container_name: fastapi-backend
+    ports:
+      - "8001:8000"
+    networks:
+      - netsiwapan02
+    restart: unless-stopped
+
+networks:
+  netsiwapan02:
+    external: true

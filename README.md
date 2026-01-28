@@ -1,133 +1,73 @@
-# FastAPI ML Project
+# Welcome to your Lovable project
 
-A FastAPI project with machine learning capabilities for serving ML models via REST APIs.
+## Project info
 
-## Features
+**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
 
-- **FastAPI** - Modern, fast web framework for building APIs
-- **Machine Learning Support** - TensorFlow and scikit-learn integration
-- **Type Safety** - Pydantic models for request/response validation
-- **High Performance** - ASGI server with Uvicorn
+## How can I edit this code?
 
-## Requirements
+There are several ways of editing your application.
 
-- Python 3.13+
-- Virtual environment (venv/)
+**Use Lovable**
 
-## Installation
+Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
 
-1. **Clone and navigate to the project:**
-   ```bash
-   cd fastapi-lm
-   ```
+Changes made via Lovable will be committed automatically to this repo.
 
-2. **Activate the virtual environment:**
-   ```bash
-   source venv/bin/activate  # On macOS/Linux
-   ```
+**Use your preferred IDE**
 
-3. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-## Running the Application
+The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-### Development Mode
+Follow these steps:
 
-Start the development server with auto-reload:
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
 
-```bash
-uvicorn app.main:app --reload
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
+
+# Step 3: Install the necessary dependencies.
+npm i
+
+# Step 4: Start the development server with auto-reloading and an instant preview.
+npm run dev
 ```
 
-### Production Mode
+**Edit a file directly in GitHub**
 
-Run with specific host and port:
+- Navigate to the desired file(s).
+- Click the "Edit" button (pencil icon) at the top right of the file view.
+- Make your changes and commit the changes.
 
-```bash
-python -m uvicorn main:app --host 0.0.0.0 --port 8000
-```
+**Use GitHub Codespaces**
 
-The API will be available at `http://localhost:8000`
+- Navigate to the main page of your repository.
+- Click on the "Code" button (green button) near the top right.
+- Select the "Codespaces" tab.
+- Click on "New codespace" to launch a new Codespace environment.
+- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-## Project Structure
+## What technologies are used for this project?
 
-```
-fastapi-lm/
-|
-├── app/
-│   ├── main.py
-│   ├── core/
-│   │   ├── config.py
-│   │   ├── logger.py
-│   │   └── security.py
-│   │
-│   ├── api/
-│   │   ├── v1/
-│   │   │   ├── router.py
-│   │   │   ├── flight/
-│   │   │   │   ├── route.py
-│   │   │   │   ├── schema.py
-│   │   │   │   └── service.py
-│   │   │   ├── depression/
-│   │   │   │   ├── route.py
-│   │   │   │   ├── schema.py
-│   │   │   │   └── service.py
-│   │   │   ├── animal/
-│   │   │   │   ├── route.py
-│   │   │   │   ├── schema.py
-│   │   │   │   └── service.py
-│   │   │   └── recommend/
-│   │   │       ├── route.py
-│   │   │       ├── schema.py
-│   │   │       └── service.py
-│
-│   ├── models/
-│   │   ├── flight_price.pkl
-│   │   ├── depression_model.pt
-│   │   ├── animal_cnn.pt
-│   │   └── movie_embedding.faiss
-│
-│   └── utils/
-│       ├── preprocess.py
-│       └── inference.py
-│
-├── requirements.txt
-├── Dockerfile
-├── docker-compose.yml
-└── README.md
-```
+This project is built with:
 
-## API Documentation
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
 
-Once the server is running, access the interactive API documentation:
+## How can I deploy this project?
 
-- **Swagger UI**: http://localhost:8000/docs
-- **ReDoc**: http://localhost:8000/redoc
+Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
 
-## Dependencies
+## Can I connect a custom domain to my Lovable project?
 
-Key dependencies include:
+Yes, you can!
 
-- FastAPI 0.115.0 - Web framework
-- Uvicorn 0.30.6 - ASGI server
-- TensorFlow ≥2.20.0 - Deep learning
-- scikit-learn ≥1.6.0 - Machine learning
-- pandas ≥2.2.2 - Data processing
-- numpy ≥2.1.0 - Numerical computing
+To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
-## Development
-
-### Project Status
-
-This is a scaffold project set up for ML model serving. The architecture follows FastAPI's routing system with:
-
-- Single entry point (`main.py`)
-- Modular routers for different API endpoints
-- Pydantic models for data validation
-- ML models loaded and served via TensorFlow/scikit-learn
-
-## License
-
-MIT License
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
