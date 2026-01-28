@@ -4,6 +4,7 @@ import joblib
 from loguru import logger
 
 
+   
 def predict_price(req: FlightRequest) -> pd.DataFrame:
     MODEL_PATH = "app/models/flight_price_model.joblib"
     artifact = joblib.load(MODEL_PATH)

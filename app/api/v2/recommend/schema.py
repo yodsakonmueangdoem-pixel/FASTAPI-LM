@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-class DepressionRequest(BaseModel):
+class RecommendRequest(BaseModel):
     query: str
     type: str
     top_k: int
