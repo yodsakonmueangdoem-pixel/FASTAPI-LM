@@ -22,3 +22,5 @@ app.add_middleware(
 )
 
 app.include_router(app_router, prefix="/api/v1")
+
+print("ภูมิ")
