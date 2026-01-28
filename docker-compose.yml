@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  ai-companion-Yodsakon:
+  ai-companion-yodsakon:
     build:
       context: .
       dockerfile: Dockerfile
